@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'de5evucvjnov3b',
         'USER': 'ghgnvszefvrksn',
         'PASSWORD' : 'f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91' ,
-        'HOST' : 'postgres://ghgnvszefvrksn:f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91@ec2-23-23-184-76.compute-1.amazonaws.com:5432/de5evucvjnov3b',
+        'HOST' : 'ec2-23-23-184-76.compute-1.amazonaws.com',
         'PORT' : '5432' ,
     }
 }
