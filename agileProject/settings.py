@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'agileProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD' : 'seguro' ,
-        'HOST' : 'localhost',
+        'NAME': 'de5evucvjnov3b',
+        'USER': 'ghgnvszefvrksn',
+        'PASSWORD' : 'f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91' ,
+        'HOST' : 'postgres://ghgnvszefvrksn:f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91@ec2-23-23-184-76.compute-1.amazonaws.com:5432/de5evucvjnov3b',
         'PORT' : '5432' ,
     }
 }
