@@ -27,7 +27,7 @@ SECRET_KEY = 'h*lr3(ksoeyfrk(zs4#v$eeksid2jcl##-^tz4y*+0ujl#@zlz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://grupo1-app.herokuapp.com/']
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
