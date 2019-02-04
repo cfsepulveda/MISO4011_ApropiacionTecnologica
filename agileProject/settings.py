@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import django_heroku
+# import django_heroku
 import logging
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'agileProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'de5evucvjnov3b',
-        'USER': 'ghgnvszefvrksn',
-        'PASSWORD' : 'f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91' ,
-        'HOST' : 'ec2-23-23-184-76.compute-1.amazonaws.com',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD' : 'Febrero2019' ,
+        'HOST' : 'localhost',
         'PORT' : '5432' ,
     }
 }
@@ -129,5 +129,4 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
-
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

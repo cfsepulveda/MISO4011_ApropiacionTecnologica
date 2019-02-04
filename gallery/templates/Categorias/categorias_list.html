@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorias</title>
+</head>
+<body>
+
+{% if object_list %}
+{% for categoria in object_list %}
+<tr>
+    <td>{{ categoria.id }}</td>
+    <td>{{ categoria.Descripcion }}</td>
+</tr>
+{% endfor %}
+
+{% else %}
+<h1>no hay registros</h1>
+
+{% endif %}
+
+</body>
+</html>
