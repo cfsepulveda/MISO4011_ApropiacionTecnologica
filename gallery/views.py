@@ -16,7 +16,6 @@ def index(request):
 			   'audio_list': audio_list}
 	return render(request, 'gallery/index.html', context)
 
-@csrf_exempt
 def add_user_view(request):
     if request.method == 'POST':
         jsonUser = json.loads(request.body)
@@ -33,7 +32,6 @@ def add_user_view(request):
         user_model.save()
     return HttpResponse(serializers.serialize("json", [user_model]))
 
-@csrf_exempt
 def add_user(request):
     return render(request, "gallery/register.html")
 
