@@ -25,12 +25,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h*lr3(ksoeyfrk(zs4#v$eeksid2jcl##-^tz4y*+0ujl#@zlz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://grupo1-app.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
 
 # Application definition
 
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery'
+    'gallery',
 ]
 
 MIDDLEWARE = [
