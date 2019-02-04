@@ -13,14 +13,14 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:8000/gallery/addUser/",
+                    url: "https://grupo1-app.herokuapp.com/gallery/addUser/",
                     data: JSON.stringify({ 'username': $('#username').val() , 'first_name': $('#first_name').val() ,
                         'last_name': $('#last_name').val() , 'password': $('#password').val() , 'email': $('#email').val() }),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data){
                         alert("Usuario registrado: " + $('#username').val());
-                        window.location = "http://localhost:8000/gallery/viewImages/";
+                        window.location = "https://grupo1-app.herokuapp.com/gallery/viewImages/";
                     },
                     failure: function(errMsg) {
                         alert("Se presentó un error al adicionar el usuario");
@@ -39,7 +39,7 @@
         <input id="password" name="password" type="password" /><br />
         <input id="password2" name="password2" type="password" /><br />
         <input id="send" name="send" type="submit" value="Registrar" />
-        <a href="http://localhost:8000/gallery/viewImages">Cancelar</a>
+        <a href="https://grupo1-app.herokuapp.com/gallery/viewImages">Cancelar</a>
 	</form>
 
 </body>
