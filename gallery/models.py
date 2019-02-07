@@ -1,13 +1,13 @@
 
 
 # Create your models here. editing gallery model
+from django.contrib.auth.models import User
 from django.db import models
 
 
 class Image(models.Model):
     name= models.CharField(max_length=200)
     url = models.CharField(max_length=1000)
-
     def __str__(self):
         return 'Image: '+ self.name
 
@@ -25,3 +25,4 @@ class Audio(models.Model):
 
     def __str__(self):
         return 'Audio: '+ self.name
+

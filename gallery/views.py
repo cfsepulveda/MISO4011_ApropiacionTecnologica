@@ -1,8 +1,12 @@
+import json
+
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core import serializers
-from django.core.serializers import json
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import Image
 from .models import Video
 from .models import Audio
@@ -16,6 +20,7 @@ def index(request):
 			   'audio_list': audio_list}
 	return render(request, 'gallery/index.html', context)
 
+@csrf_exempt
 def add_user_view(request):
     if request.method == 'POST':
         jsonUser = json.loads(request.body)
@@ -32,7 +37,27 @@ def add_user_view(request):
         user_model.save()
     return HttpResponse(serializers.serialize("json", [user_model]))
 
+@csrf_exempt
 def add_user(request):
     return render(request, "gallery/register.html")
 
+def login_view(request):
+    if request.method == 'POST':
+        jsonUser = json.loads(request.body)
+        username = jsonUser['username']
+        password = jsonUser['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            message = "ok"
+        else:
+            message = 'Nombre de usuario o contraseña incorrectos'
 
+    return JsonResponse({"message": message})
+
+def login_user(request):
+    return render(request, "gallery/login.html")
+
+def logout_view(request):
+    logout(request)
+    return JsonResponse({"message": 'ok'})
