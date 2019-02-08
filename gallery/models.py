@@ -1,6 +1,7 @@
 
 
 # Create your models here. editing gallery model
+from django.contrib.auth.models import User
 from django.db import models
 from django.forms import ModelForm
 
@@ -10,6 +11,7 @@ class Image(models.Model):
     description = models.CharField(max_length=1000, null=True)
     type = models.CharField(max_length=5, blank=True)
     imageFile = models.ImageField(upload_to='images', null = True)
+    user = models.ForeignKey(User, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return 'Image: '+ self.name
