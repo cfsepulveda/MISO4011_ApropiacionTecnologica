@@ -55,9 +55,11 @@ def login_view(request):
 
     return JsonResponse({"message": message})
 
+@csrf_exempt
 def login_user(request):
     return render(request, "gallery/login.html")
 
+@csrf_exempt
 def logout_view(request):
     logout(request)
     return JsonResponse({"message": 'ok'})
