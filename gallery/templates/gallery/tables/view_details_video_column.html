@@ -16,25 +16,14 @@
     <script type="text/javascript"
         src="{% static "django_tables2_column_shifter/js/django_tables2_column_shifter.min.js" %}">
         </script>
-
-        <script>
-            function imageDetails(){
-                console.log("Hola mundo");
-            }
-        
-        </script>
-
 </head>
 
 <body>
 
-    {% load django_tables2 %}
-    <h1>Videos</h1>
-    {% render_table videoTable %}
-    <h1>Audios</h1>
-    {% render_table audioTable %}
-    <h1>Imagenes</h1>
-    {% render_table imageTable %}
+    <h1>Video</h1>
+    {% render_table video %}
+    
+    <object data="{{url}}" width="560" height="315"></object>
 
 
 </body>
