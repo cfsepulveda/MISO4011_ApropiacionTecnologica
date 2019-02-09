@@ -8,13 +8,12 @@ from django.core import serializers
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from tables import ImageTable
-from tables import VideoTable
-from tables import AudioTable
-
-from models import Image
-from models import Video
-from models import Audio
+from .tables import ImageTable
+from .tables import VideoTable
+from .tables import AudioTable
+from .models import Image
+from .models import Video
+from .models import Audio
 
 
 def index(request):

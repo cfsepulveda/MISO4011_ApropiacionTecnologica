@@ -1,6 +1,7 @@
 django
 django-tables2
 django_tables2_column_shifter
+psycopg2
 psycopg2-binary
 gunicorn
 django-heroku
