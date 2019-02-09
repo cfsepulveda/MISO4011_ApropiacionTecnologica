@@ -40,6 +40,8 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # Application definition
 
 INSTALLED_APPS = [
+    'django_tables2',
+    'django_tables2_column_shifter',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,6 +82,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'agileProject.wsgi.application'
+
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 
 
 # Database
