@@ -1,5 +1,6 @@
 django
 
 django-tables2
+django_tables2_column_shifter
 gunicorn
 django-heroku
