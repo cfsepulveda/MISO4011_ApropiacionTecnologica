@@ -11,7 +11,7 @@ class Image(models.Model):
     name= models.CharField(max_length=200)
     url = models.CharField(max_length=1000)
     user = models.ForeignKey(User, null=True, on_delete=models.DO_NOTHING)
-	title = models.CharField(max_length=140, default='')
+    title = models.CharField(max_length=140, default='')
     author = models.CharField(max_length=140, default='')
     date =  models.DateTimeField(default=timezone.now)
     city = models.CharField(max_length=140, default='')
