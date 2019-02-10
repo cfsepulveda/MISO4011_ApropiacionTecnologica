@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/login/"
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/loginUser/"
                            target="_blank">Login</a>
                     </li>
                     <li class="nav-item">
@@ -93,48 +93,47 @@
     <!-- /Navbar -->
 
 </header>
-<main>
-    <hr>
-    <hr>
-    <hr>
+<main class="mt-5 pt-5">
     {% load django_tables2 %}
-    <!--Section: Cards-->
-    <section class="text-center">
+    <div class="container-fluid">
+        <!--Section: Cards-->
+        <section class="text-center">
 
-        <!--Grid row-->
-        <div class="row mb-4 wow fadeIn">
+            <!--Grid row-->
+            <div class="row mb-4 wow fadeIn">
 
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4">
-                <div class="card">
-                <h4 class="card-title">Videos</h4>
-                {% render_table videoTable %}
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card">
+                        <h4 class="card-title">Videos</h4>
+                        {% render_table videoTable %}
+                    </div>
                 </div>
-            </div>
-            <!--Grid column-->
+                <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                <h4 class="card-title">Audios</h4>
-                {% render_table audioTable %}
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <h4 class="card-title">Audios</h4>
+                        {% render_table audioTable %}
+                    </div>
                 </div>
-            </div>
-            <!--Grid column-->
+                <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                <h4 class="card-title">Imagenes</h4>
-                {% render_table imageTable %}
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <h4 class="card-title">Imagenes</h4>
+                        {% render_table imageTable %}
+                    </div>
                 </div>
-            </div>
-            <!--Grid column-->
+                <!--Grid column-->
 
-        </div>
-        <!--Grid row-->
-    </section>
-    <!--Section: Cards-->
+            </div>
+            <!--Grid row-->
+        </section>
+        <!--Section: Cards-->
+    </div>
 
 
 </main>
