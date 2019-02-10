@@ -76,7 +76,7 @@ def login_view(request):
 
 @csrf_exempt
 def login_user(request):
-    return render(request, 'gallery/login.html')
+    return render(request, 'gallery/register.html')
 
 
 @csrf_exempt
