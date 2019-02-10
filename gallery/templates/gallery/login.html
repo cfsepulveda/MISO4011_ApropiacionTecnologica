@@ -9,7 +9,7 @@
         function sendForm() {
         $.ajax({
             type: "POST",
-            url: "https://grupo1-app.herokuapp.com/gallery/login",
+            url: "https://grupo1-app.herokuapp.com/gallery/login/",
             data: JSON.stringify({username : $('#username').val(), password : $('#password').val() }),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
