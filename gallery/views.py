@@ -57,7 +57,7 @@ def add_user_view(request):
 def add_user(request):
     return render(request, 'gallery/register.html')
 
-
+@csrf_exempt
 def login_view(request):
     if request.method == 'POST':
         jsonUser = json.loads(request.body)
@@ -110,3 +110,19 @@ def audio_details(request, id):
     return render(request,
                   'gallery/tables/view_details_audio_column.html',
                   context)
+
+@csrf_exempt
+def add_image(request):
+    if request.method == 'POST':
+        newImage = Image(
+            name=request.POST.get('name'),
+            url = request.POST.get('url'),
+            user = request.user,
+            title = request.POST.get('title'),
+            author = request.POST.get('author'),
+            date = request.POST.get('date'),
+            city = request.POST.get('city'),
+            country = request.POST.get('country'),
+            )
+        newImage.save()
+        return HttpResponse(serializers.serialize("json", [newImage]))
