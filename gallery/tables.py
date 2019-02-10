@@ -11,6 +11,7 @@ class ImageTable(tables.Table):
     class Meta:
          model = Image
          fields = ('id','name', 'details')
+         template_name = 'django_tables2/bootstrap-responsive.html'
 
          
 
@@ -20,6 +21,7 @@ class AudioTable(tables.Table):
     class Meta:
          model = Audio
          fields = ('id','name', 'details')
+         template_name = 'django_tables2/bootstrap-responsive.html'
 
 
 
@@ -30,6 +32,7 @@ class VideoTable(tables.Table):
     class Meta:
          model = Video
          fields = ('id','name', 'details')
+         template_name = 'django_tables2/bootstrap-responsive.html'
 
 
         
