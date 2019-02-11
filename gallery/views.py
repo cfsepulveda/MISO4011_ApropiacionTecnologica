@@ -14,7 +14,7 @@ from .tables import AudioTable
 from .models import Image
 from .models import Video
 from .models import Audio
-
+from .models import Categoria
 
 def index(request):
     imageTable = ImageTable(Image.objects.all())
@@ -23,6 +23,7 @@ def index(request):
     images_list = Image.objects.all()
     video_list = Video.objects.all()
     audio_list = Audio.objects.all()
+    categoria_list = Categoria.objects.all()
     context = {
         'images_list': images_list,
         'video_list': video_list,
@@ -30,6 +31,7 @@ def index(request):
         'imageTable': imageTable,
         'audioTable': audioTable,
         'videoTable': videoTable,
+        'categoria_list': categoria_list,
         }
     return render(request, 'gallery/index.html', context)
 
