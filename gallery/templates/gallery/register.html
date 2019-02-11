@@ -2,8 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Registro de usuarios</title>
     <h1>Registro de usuarios</h1>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static "css/mdb.min.css" %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static "css/style.min.css" %}" rel="stylesheet">
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static "js/popper.min.js" %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static "js/mdb.min.js" %}"></script>
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
         <script>
             function sendForm() {
@@ -32,16 +56,110 @@
         </script>
 </head>
 <body>
-    <form method="post" action="" onsubmit="return sendForm();">
-        <input id="username" name="username" type="text" placeholder="Usuario" /><br />
-        <input id="first_name" name="first_name" type="text" placeholder="Nombre" /><br />
-        <input id="last_name"  name="last_name"  type="text" placeholder="Apellido" /><br />
-        <input id="email" name="email" type="email" placeholder="ejemplo@correo.com" /><br />
-        <input id="password" name="password" type="password" /><br />
-        <input id="password2" name="password2" type="password" /><br />
-        <input id="send" name="send" type="submit" value="Registrar" />
-        <a href="https://grupo1-app.herokuapp.com/gallery/viewImages">Cancelar</a>
+<header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand waves-effect" href="/gallery" target="_blank">
+                <strong class="blue-text">Gallery</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Left -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/loginUser/"
+                           target="_blank">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/registerUser/"
+                           target="_blank">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /Navbar -->
+
+</header>
+<main class="mt-5 pt-5">
+    <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+                <!-- Form -->
+                <form name="" class="card" method="post" action="" onsubmit="return sendForm();">
+                  <!-- Heading -->
+                  <h3 class="dark-grey-text text-center">
+                    <strong>Log in:</strong>
+                  </h3>
+                  <hr>
+
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input id="username" name="username" type="text" class="form-control"/>
+                    <label for="form3">Usuario: </label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input id="first_name" name="first_name" type="text" class="form-control"/>
+                    <label for="form3">Nombre: </label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input id="last_name"  name="last_name"  type="text" class="form-control"/>
+                    <label for="form3">Apellido: </label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input id="email" name="email" type="emal" class="form-control"/>
+                    <label for="form2">Correo: </label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input id="password" name="password" type="password" class="form-control"/>
+                    <label for="form2">Contraseña: </label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input id="password2" name="password2" type="password" class="form-control"/>
+                    <label for="form2">Repetir contraseña: </label>
+                  </div>
+                  <div class="text-center">
+                    <input class="btn btn-info btn-sm" id="send" name="send" type="submit" value="Login"/>
+                    <hr>
+                    <a class="btn btn-info btn-sm" href="https://grupo1-app.herokuapp.com/gallery/viewImages">Cancelar</a>
+                  </div>
+
+                </form>
+                <!-- Form -->
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
 	</form>
+</main>
 
 </body>
 </html>
