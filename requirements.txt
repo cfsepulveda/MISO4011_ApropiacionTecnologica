@@ -1,8 +1,8 @@
 django
 django-tables2
 django_tables2_column_shifter
+django-cors-headers
 psycopg2
 psycopg2-binary
 gunicorn
 django_heroku
-django-cors-headers
