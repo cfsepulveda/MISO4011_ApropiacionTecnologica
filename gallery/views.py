@@ -15,7 +15,7 @@ from .models import Image
 from .models import Video
 from .models import Audio
 
-
+@csrf_exempt
 def index(request):
     imageTable = ImageTable(Image.objects.all())
     videoTable = VideoTable(Video.objects.all())
@@ -101,7 +101,7 @@ def logout_view(request):
     logout(request)
     return JsonResponse({'message': 'ok'})
 
-
+@csrf_exempt
 def image_details(request, id):
     image = Image.objects.all().filter(id=id)
     url = Image.objects.get(id=id).url
@@ -110,7 +110,7 @@ def image_details(request, id):
                   'gallery/tables/view_details_image_column.html',
                   context)
 
-
+@csrf_exempt
 def video_details(request, id):
     video = Video.objects.all().filter(id=id)
     url = Video.objects.get(id=id).url
@@ -119,7 +119,7 @@ def video_details(request, id):
                   'gallery/tables/view_details_video_column.html',
                   context)
 
-
+@csrf_exempt
 def audio_details(request, id):
     audio = Audio.objects.all().filter(id=id)
     url = Audio.objects.get(id=id).url
