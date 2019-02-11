@@ -15,6 +15,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Image, ImageForm
 
 
+from django.views.generic import ListView
+from gallery.models import Categoria
+
 def index(request):
 	images_list = Image.objects.all()
 	video_list = Video.objects.all()
@@ -25,6 +28,9 @@ def index(request):
 	return render(request, 'gallery/index.html', context)
 
 @csrf_exempt
+class CategoriaList(ListView):
+	model = Categoria
+	template_name = 'templates/Categorias/categoria_list.html'
 def add_user_view(request):
     if request.method == 'POST':
         jsonUser = json.loads(request.body)
