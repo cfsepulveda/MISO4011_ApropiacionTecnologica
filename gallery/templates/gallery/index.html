@@ -34,9 +34,23 @@
     <h1>Audios</h1>
     {% render_table audioTable %}
     <h1>Imagenes</h1>
-    {% render_table imageTable %}
-
+    <div id="images"></div>
 
 </body>
-
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+        (function () {
+            $.getJSON( "https://localhost:8000/gallery/viewImage" ).done(function( data ) {
+                $.each(data, function(i,item) {
+                    if (item.fields.imageFile=="" || item.fields.imageFile==undefined) {
+                        $("#images").prepend('<img src="' + item.fields.url + '" width="300px" height="300px">');
+                        $("#images").prepend('<a> ' +item.fields.name+ '</a>');
+                    } else {
+                        $("#images").prepend('<img src="https://localhost:8000/' + item.fields.imageFile + '" width="300px" height="300px">');
+                        $("#images").prepend('<a> ' +item.fields.name+ '</a>');
+                    }
+                });
+            });
+        }) ();
+</script>
 </html>

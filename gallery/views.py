@@ -33,6 +33,23 @@ def index(request):
         }
     return render(request, 'gallery/index.html', context)
 
+@csrf_exempt
+def add_new_image(request):
+    return render(request, "gallery/image_form.html")
+
+
+@csrf_exempt
+def image_view(request):
+    if request.user.is_authenticated():
+        images_list = Image.objects.filter(user=request.user)
+    else:
+        images_list = Image.objects.all()
+
+    return HttpResponse(serializers.serialize("json", images_list))
+
+@csrf_exempt
+def viewImages(request):
+    return render(request, "gallery/index.html")
 
 @csrf_exempt
 def add_user_view(request):
@@ -123,6 +140,17 @@ def add_image(request):
             date = request.POST.get('date'),
             city = request.POST.get('city'),
             country = request.POST.get('country'),
+            description=request.POST.get('description'),
+            type=request.POST.get('type'),
+            imageFile=request.POST.get('imageFile'),
             )
         newImage.save()
         return HttpResponse(serializers.serialize("json", [newImage]))
+@csrf_exempt
+def is_logged_view(request):
+    if request.user.is_authenticated():
+        message = 'ok'
+    else:
+        message = 'no'
+
+    return JsonResponse({"message": message})
