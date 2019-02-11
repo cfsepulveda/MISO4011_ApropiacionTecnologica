@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
 </head>
 <body>
-
-{% block content %}
-	<form action="{% url 'images:addImage' %}" enctype="multipart/form-data" method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Adicionar" />
-	</form>
-{% endblock %}
+<form method="post" id="formImage" action="https://127.0.0.1:9000/gallery/add/" enctype="multipart/form-data">
+	<input id="name" name="name" type="text" placeholder="Nombre" /><br />
+    <input id="url" name="url" type="text" placeholder="Url" /><br />
+	<input id="title"  name="title"  type="text" placeholder="Title" /><br />
+	<input id="author" name="author" type="text" placeholder="Author" /><br />
+	<input id="city" name="city" type="text" placeholder="City" /><br />
+	<input id="country" name="country" type="text" placeholder="Country" /><br />
+	<input id="description" name="description" type="text" placeholder="Description" /><br />
+	<input id="type" name="type" type="text" placeholder="Type" /><br />
+	<input id="imageFile" name="imageFile" type="File" /><br />
+	<input id="send" name="send" type="submit" value="Adicionar" />
+	<a href="https://127.0.0.1:9000/gallery/viewImages">Cancelar</a>
+</form>
+<script>
+	$('form').submit(function(e) {
+		var formData = new FormData($('#formImage’)[0]);
+		$.ajax({
+			url: $(this).attr('action'),
+			type: $(this).attr('method'),
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success: function() {
+				window.location = "https://127.0.0.1:9000/gallery/viewImages";
+			},
+		});
+		e.preventDefault();
+	});
+</script>
 
 
 </body>
