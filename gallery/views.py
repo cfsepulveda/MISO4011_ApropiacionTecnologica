@@ -109,7 +109,7 @@ def login_user(request):
 @csrf_exempt
 def logout_view(request):
     logout(request)
-    return JsonResponse({'message': 'ok'})
+    return JsonResponse({"message":'ok'})
 
 
 def image_details(request, id):
