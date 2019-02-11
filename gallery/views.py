@@ -40,7 +40,7 @@ def add_new_image(request):
 
 @csrf_exempt
 def image_view(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         images_list = Image.objects.filter(user=request.user)
     else:
         images_list = Image.objects.all()
@@ -102,9 +102,9 @@ def logout_view(request):
     return JsonResponse({'message': 'ok'})
 
 @csrf_exempt
-def image_details(request, id):
-    image = Image.objects.all().filter(id=id)
-    url = Image.objects.get(id=id).url
+def image_details(request):
+    image = Image.objects.all()
+    url = Image.objects.all()
     context = {'image': image, 'url': url}
     return render(request,
                   'gallery/tables/view_details_image_column.html',
@@ -137,7 +137,6 @@ def add_image(request):
             user = request.user,
             title = request.POST.get('title'),
             author = request.POST.get('author'),
-            date = request.POST.get('date'),
             city = request.POST.get('city'),
             country = request.POST.get('country'),
             description=request.POST.get('description'),
@@ -148,7 +147,7 @@ def add_image(request):
         return HttpResponse(serializers.serialize("json", [newImage]))
 @csrf_exempt
 def is_logged_view(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         message = 'ok'
     else:
         message = 'no'

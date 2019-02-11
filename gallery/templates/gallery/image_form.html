@@ -8,20 +8,18 @@
 
 </head>
 <body>
-<form method="post" id="formImage" action="https://localhost:8000/gallery/add/" enctype="multipart/form-data">
+<form method="post" id="formImage" action="https://grupo1-app.herokuapp.com/gallery/add/" enctype="multipart/form-data">
 	<input id="name" name="name" type="text" placeholder="Nombre" /><br />
     <input id="url" name="url" type="text" placeholder="Url" /><br />
-	<input id="user" name="name" type="text" placeholder="Usuario" /><br />
 	<input id="title"  name="title"  type="text" placeholder="Title" /><br />
 	<input id="author" name="author" type="text" placeholder="Author" /><br />
-	<input id="date" name="date" type="date" placeholder="Date" /><br />
 	<input id="city" name="city" type="text" placeholder="City" /><br />
 	<input id="country" name="country" type="text" placeholder="Country" /><br />
 	<input id="description" name="description" type="text" placeholder="Description" /><br />
 	<input id="type" name="type" type="text" placeholder="Type" /><br />
 	<input id="imageFile" name="imageFile" type="File" /><br />
 	<input id="send" name="send" type="submit" value="Adicionar" />
-	<a href="https://localhost:8000/gallery/viewImages">Cancelar</a>
+	<a href="https://grupo1-app.herokuapp.com/gallery/viewImages">Cancelar</a>
 </form>
 <script>
 	$('form').submit(function(e) {
@@ -34,7 +32,7 @@
 			contentType: false,
 			processData: false,
 			success: function() {
-				window.location = "https://localhost:8000/gallery/viewImages";
+				window.location = "https://grupo1-app.herokuapp.com/gallery/viewImages";
 			},
 		});
 		e.preventDefault();

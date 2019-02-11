@@ -16,9 +16,6 @@ urlpatterns = [
     url(r'^addNewImage', views.add_new_image, name='addNewImage'),
 	url(r'^isLogged/$', views.is_logged_view, name='isLogged'),
 
-
-
-
 	path('imageDetails/<int:id>', views.image_details, name='imageDetails'),
 	path('audioDetails/<int:id>', views.audio_details, name='audioDetails'),
 	path('videoDetails/<int:id>', views.video_details, name='videoDetails'),	
