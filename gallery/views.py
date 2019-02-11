@@ -18,6 +18,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Image, ImageForm
 
 
+from django.views.generic import ListView
+from gallery.models import Categoria
+
 def index(request):
     imageTable = ImageTable(Image.objects.all())
     videoTable = VideoTable(Video.objects.all())
@@ -37,6 +40,9 @@ def index(request):
         }
     return render(request, 'gallery/index.html', context)
 
+class CategoriaList(ListView):
+	model = Categoria
+	template_name = 'templates/Categorias/categoria_list.html'
 @csrf_exempt
 def image_view(request):
     if request.user.is_authenticated:

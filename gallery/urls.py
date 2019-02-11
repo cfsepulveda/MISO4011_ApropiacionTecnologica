@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from django.urls import path
 
+
+from gallery.views import CategoriaList
 from . import views
 
 urlpatterns = [
@@ -19,4 +21,6 @@ urlpatterns = [
 	path('imageDetails/<int:id>', views.image_details, name='imageDetails'),
 	path('audioDetails/<int:id>', views.audio_details, name='audioDetails'),
 	path('videoDetails/<int:id>', views.video_details, name='videoDetails'),
+	path('', views.index, name='index'),
+	path('categorias', CategoriaList.as_view(), name='categorias_list'),
 ]
