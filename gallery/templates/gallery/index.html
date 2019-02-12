@@ -112,6 +112,7 @@
                 <div class="col-lg-4 col-md-12 mb-4">
                     <div class="card">
                         <h4 class="card-title">Videos</h4>
+                        {% render_table videoTable %}
 
                     </div>
                 </div>
@@ -121,6 +122,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
                         <h4 class="card-title">Audios</h4>
+                        {% render_table audioTable %}
 
                     </div>
                 </div>
@@ -145,8 +147,6 @@
 </main>
 
 </body>
-
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <script>
 (function() {
