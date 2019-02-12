@@ -26,7 +26,7 @@
     {% if imageFile == None %}
         <img src="{{url}}" width=“300px" height=“300px" />
     {% else %}
-        <img src=“/{{imageFile}}" width=“300px" height=“300px" />
+        <img src=“{% static "images" %}/{{imageFile}}" width=“300px" height=“300px" />
     {% endif %}
 
 

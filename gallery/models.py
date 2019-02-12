@@ -18,7 +18,7 @@ class Image(models.Model):
     country = models.CharField(max_length=140, default='')
     description = models.CharField(max_length=1000, null=True)
     type = models.CharField(max_length=5, blank=True)
-    imageFile = models.ImageField(upload_to='images', null = True)
+    imageFile = models.ImageField(upload_to='staticfiles/images', null = True)
 
     def __str__(self):
         return 'Image: '+ self.name

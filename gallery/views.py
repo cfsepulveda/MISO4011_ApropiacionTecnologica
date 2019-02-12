@@ -151,7 +151,7 @@ def add_image(request):
             country = request.POST.get('country'),
             description=request.POST.get('description'),
             type=request.POST.get('type'),
-            imageFile=request.POST.get('imageFile'),
+            imageFile=request.FILES['imageFile'],
             )
         newImage.save()
         return HttpResponse(serializers.serialize("json", [newImage]))

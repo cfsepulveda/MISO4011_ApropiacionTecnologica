@@ -30,21 +30,21 @@
         new WOW().init();
     </script>
     <script>
-        $('form').submit(function(e) {
-            var formData = new FormData($('#formImage’)[0]);
-            $.ajax({
-                url: $(this).attr('action'),
-                type: $(this).attr('method'),
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function() {
-                    window.location = "https://grupo1-app.herokuapp.com/gallery/viewImages";
-                },
-            });
-            e.preventDefault();
-        });
+            (function() {
+	$.getJSON( "https://127.0.0.1:9000/gallery/isLogged" ).done(function( data ) {
+		if (data.message =="no") {
+			$("#login_user").show();
+			$("#register_user").show();
+			$("#add_new_image").hide();
+			$("#close_session").hide();
+		} else {
+			$("#login_user").hide();
+			$("#register_user").hide();
+			$("#add_new_image").show();
+			$("#close_session").show();
+		}
+	});
+	}) ();
     </script>
 </head>
 <body>
@@ -72,16 +72,16 @@
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/">Home
+                        <a class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/loginUser/"
+                         <a id="login_user" class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/loginUser/"
                            target="_blank">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/registerUser/"
+                        <a id="register_user"class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/registerUser/"
                            target="_blank">Register</a>
                     </li>
                 </ul>
@@ -99,7 +99,7 @@
             <div class="card">
 
                 <!-- Form -->
-                <form name="" class="card" method="post" action="" onsubmit="return sendForm();">
+                <form id="formImage" class="card" method="post" action="https://127.0.0.1:9000/gallery/add/">
                   <!-- Heading -->
                   <h3 class="dark-grey-text text-center">
                     <strong>Subir Imagen:</strong>
@@ -149,12 +149,11 @@
                   <div class="md-form">
                     <i class="fas fa-envelope prefix grey-text"></i>
                     <input id="imageFile" name="imageFile" type="File" class="form-control"/>
-                    <label for="form2">Tipo: </label>
                   </div>
                   <div class="text-center">
                     <input class="btn btn-info btn-sm" id="send" name="send" type="submit" value="Enviar"/>
                     <hr>
-                    <a class="btn btn-info btn-sm" href="https://grupo1-app.herokuapp.com/gallery">Cancelar</a>
+                    <a class="btn btn-info btn-sm" href="https://127.0.0.1:9000/gallery">Cancelar</a>
                   </div>
 
                 </form>
@@ -168,4 +167,26 @@
 	</form>
 </main>
 </body>
+
+<script>
+
+        $('form').submit(function (e) {
+            var formData = new FormData($('#formImage')[0]);
+
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function () {
+                    alert("agregado con exito");
+                    window.location = "https://127.0.0.1:9000/gallery";
+                },
+            });
+            e.preventDefault();
+        });
+
+</script>
 </html>
