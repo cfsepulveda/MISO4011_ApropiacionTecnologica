@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import django_heroku
+# import django_heroku
 import logging
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -38,11 +38,8 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 
 # Application definition
-CORS_ORIGIN_ALLOW_ALL=True
 
 INSTALLED_APPS = [
-    'django_tables2',
-    'django_tables2_column_shifter',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,14 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gallery',
-    'corsheaders',
-    'sslserver',
-
-
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,8 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'agileProject.wsgi.application'
 
-DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
-
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -98,11 +88,11 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'de5evucvjnov3b',
-        'USER': 'ghgnvszefvrksn',
-        'PASSWORD': 'f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91',
-        'HOST': 'ec2-23-23-184-76.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD' : 'Febrero2019' ,
+        'HOST' : 'localhost',
+        'PORT' : '5432' ,
     }
 }
 # Password validation
@@ -141,5 +131,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-
-django_heroku.settings(locals())
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
+# django_heroku.settings(locals())
