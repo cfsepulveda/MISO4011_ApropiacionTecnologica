@@ -3,3 +3,5 @@
 *.pyc
 venv
 
+gallery/migrations/__pycache__/0001_initial.cpython-37.pyc
+gallery/migrations/0001_initial.py

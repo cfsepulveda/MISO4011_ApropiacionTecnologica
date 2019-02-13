@@ -151,10 +151,10 @@ def add_image(request):
             country = request.POST.get('country'),
             description=request.POST.get('description'),
             type=request.POST.get('type'),
-            imageFile=request.FILES['imageFile'],
-            )
+            imageFile=request.FILES.get('imageFile',False))
         newImage.save()
         return HttpResponse(serializers.serialize("json", [newImage]))
+
 @csrf_exempt
 def is_logged_view(request):
     if request.user.is_authenticated:

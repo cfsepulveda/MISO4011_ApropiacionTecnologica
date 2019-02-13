@@ -18,14 +18,15 @@ class Image(models.Model):
     country = models.CharField(max_length=140, default='')
     description = models.CharField(max_length=1000, null=True)
     type = models.CharField(max_length=5, blank=True)
-    imageFile = models.ImageField(upload_to='staticfiles/images', null = True)
+    imageFile = models.ImageField(upload_to='staticfiles/images', null=True)
 
     def __str__(self):
         return 'Image: '+ self.name
 
 class Categoria(models.Model):
-    id = models.IntegerField(max_length=5,primary_key=id)
-    descripcion = models.CharField(max_length=50)
+    id = models.CharField(max_length=10,primary_key=id)
+    descripcion = models.CharField(max_length=1000, null=False)
+
 class ImageForm(ModelForm):
     class Meta:
         model = Image
@@ -52,13 +53,6 @@ class Audio(models.Model):
     date =  models.DateTimeField(default=timezone.now)
     city = models.CharField(max_length=140, default='')
     country = models.CharField(max_length=140, default='')
-
-    def __str__(self):
-        return 'Audio: '+ self.name
-
-class Categoria(models.Model):
-    name= models.CharField(max_length=200)
-    url = models.CharField(max_length=1000)
 
     def __str__(self):
         return 'Audio: '+ self.name

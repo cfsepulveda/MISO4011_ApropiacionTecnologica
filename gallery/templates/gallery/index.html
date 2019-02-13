@@ -73,23 +73,23 @@
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/">Home
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a id="login_user" class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/loginUser/"
+                        <a id="login_user" class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/loginUser/"
                            target="_blank">Login</a>
                     </li>
                     <li  class="nav-item">
-                        <a id="register_user"class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/registerUser/"
+                        <a id="register_user"class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/registerUser/"
                            target="_blank">Register</a>
                     </li>
                     <li  class="nav-item">
-                        <a id="add_new_image" class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/addNewImage/"
+                        <a id="add_new_image" class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/addNewImage/"
                            target="_blank">Add new images</a>
                     </li>
-                    <a id="close_session"  class="btn btn-info btn-sm" href="https://127.0.0.1:9000/gallery/logout/" onclick="return logout();"
+                    <a id="close_session"  class="btn btn-info btn-sm" href="https://grupo1-app.herokuapp.com/gallery/logout/" onclick="return logout();"
                            target="_blank">Logout</a>
 
                 </ul>
@@ -101,6 +101,8 @@
 </header>
 <main class="mt-5 pt-5">
     {% load django_tables2 %}
+    <div id="images">
+
     <div class="container-fluid">
         <!--Section: Cards-->
         <section class="text-center">
@@ -140,7 +142,7 @@
         </section>
         <!--Section: Cards-->
     </div>
-
+</div>
 
 </main>
 
@@ -150,7 +152,8 @@
 
 <script>
 (function() {
-	$.getJSON( "https://127.0.0.1:9000/gallery/isLogged" ).done(function( data ) {
+	$.getJSON( "https://grupo1-app.herokuapp.com/gallery/isLogged" ).done(function( data ) {
+
 		if (data.message =="no") {
 			$("#login_user").show();
 			$("#register_user").show();
@@ -165,9 +168,9 @@
 	});
 	}) ();
     function logout() {
-    $.getJSON( "https://127.0.0.1:9000/gallery/logout" ).done(function( data ) {
+    $.getJSON( "https://grupo1-app.herokuapp.com/gallery/logout" ).done(function( data ) {
         if (data.message == "ok") {
-                window.location = "http://127.0.0.1:9000/gallery";
+                window.location = "https://grupo1-app.herokuapp.com/gallery";
     } else {
                 alert("Se presentó un error al salir de la galería");
             }

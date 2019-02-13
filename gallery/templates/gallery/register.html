@@ -39,14 +39,14 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "https://127.0.0.1:9000/gallery/addUser/",
+                    url: "https://grupo1-app.herokuapp.com/gallery/addUser/",
                     data: JSON.stringify({ 'username': $('#username').val() , 'first_name': $('#first_name').val() ,
                         'last_name': $('#last_name').val() , 'password': $('#password').val() , 'email': $('#email').val() }),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data){
                         alert("Usuario registrado: " + $('#username').val());
-                        window.location = "https://127.0.0.1:9000/gallery/viewImages/";
+                        window.location = "https://grupo1-app.herokuapp.com/gallery/viewImages/";
                     },
                     failure: function(errMsg) {
                         alert("Se presentó un error al adicionar el usuario");
@@ -81,16 +81,16 @@
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/">Home
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/loginUser/"
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/loginUser/"
                            target="_blank">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="https://127.0.0.1:9000/gallery/registerUser/"
+                        <a class="nav-link waves-effect" href="https://grupo1-app.herokuapp.com/gallery/registerUser/"
                            target="_blank">Register</a>
                     </li>
                 </ul>
@@ -148,7 +148,7 @@
                   <div class="text-center">
                     <input class="btn btn-info btn-sm" id="send" name="send" type="submit" value="Sign Up"/>
                     <hr>
-                    <a class="btn btn-info btn-sm" href="https://127.0.0.1:9000/gallery">Cancelar</a>
+                    <a class="btn btn-info btn-sm" href="https://grupo1-app.herokuapp.com/gallery">Cancelar</a>
                   </div>
 
                 </form>

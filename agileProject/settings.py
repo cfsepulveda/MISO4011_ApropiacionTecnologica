@@ -32,10 +32,8 @@ ALLOWED_HOSTS = ['*']
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-
 
 # Application definition
 CORS_ORIGIN_ALLOW_ALL=True
@@ -97,12 +95,12 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'de5evucvjnov3b',
-        'USER': 'ghgnvszefvrksn',
-        'PASSWORD': 'f780af2628fc1bbcc688a4a156f54131cdc9e36c3ccba261117857264c6baf91',
-        'HOST': 'ec2-23-23-184-76.compute-1.amazonaws.com',
-        'PORT': '5432',
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'gallery',
+    'USER': 'usdbgaleria',
+    'PASSWORD' : 'toorGrupo1' ,
+    'HOST' : 'localhost',
+    'PORT' : '5432' ,
     }
 }
 # Password validation
