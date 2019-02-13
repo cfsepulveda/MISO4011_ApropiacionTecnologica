@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gallery',
     'corsheaders',
-    'sslserver',
+    #'sslserver',
 
 
 ]
