@@ -57,3 +57,19 @@ class Audio(models.Model):
     def __str__(self):
         return 'Audio: '+ self.name
 
+class ClipAudio(models.Model):
+    name= models.CharField(max_length=200)
+    secondStart= models.CharField(max_length=200)
+    secondEnd= models.CharField(max_length=200)
+
+    def __str__(self):
+        return 'ClipAudio: '+ self.name
+
+class ClipVideo(models.Model):
+    name= models.CharField(max_length=200)
+    secondStart= models.CharField(max_length=200)
+    secondEnd= models.CharField(max_length=200)    
+
+    def __str__(self):
+        return 'ClipAudio: '+ self.name
+
