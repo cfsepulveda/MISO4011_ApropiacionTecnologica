@@ -1,1 +1,5 @@
 .idea/*
+myenv/
+thanos/
+gallery/migrations/
+.DS_Store
