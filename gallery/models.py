@@ -75,3 +75,15 @@ class ClipVideo(models.Model):
     def __str__(self):
         return 'ClipAudio: '+ self.name
 
+class UserLogin(models.Model):
+    login = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    name = models.CharField(max_length=300)
+    lastname = models.CharField(max_length=300)
+    email = models.CharField(max_length=300)
+    photo = models.ImageField(upload_to='staticfiles/photo', null=True)
+    city = models.CharField(max_length=200, null=True)
+    country = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return 'UserLogin: '+ self.name
