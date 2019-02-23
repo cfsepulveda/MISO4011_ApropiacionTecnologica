@@ -62,6 +62,8 @@ class ClipAudio(models.Model):
     secondStart= models.CharField(max_length=200)
     secondEnd= models.CharField(max_length=200)
     audioName= models.CharField(max_length=200)
+    email= models.CharField(max_length=200,  null=True)
+
 
     def __str__(self):
         return 'ClipAudio: '+ self.name
@@ -71,6 +73,7 @@ class ClipVideo(models.Model):
     secondStart= models.CharField(max_length=200)
     secondEnd= models.CharField(max_length=200)    
     videoName= models.CharField(max_length=200)
+    email= models.CharField(max_length=200,  null=True)
 
     def __str__(self):
         return 'ClipAudio: '+ self.name
