@@ -8,6 +8,7 @@ from .models import Categoria
 from .models import ClipAudio
 from .models import ClipVideo
 from .models import UserLogin
+from .models import  MediaType
 
 
 admin.site.register(Image)
@@ -17,3 +18,4 @@ admin.site.register(Categoria)
 admin.site.register(ClipAudio)
 admin.site.register(ClipVideo)
 admin.site.register(UserLogin)
+admin.site.register(MediaType)

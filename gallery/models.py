@@ -5,6 +5,16 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 from django.forms import ModelForm
+from enum import  Enum
+
+class MediaType (models.Model):
+    id=models.AutoField(primary_key=True)
+    Name=models.CharField(max_length=10,null=False)
+
+class Categoria(models.Model):
+    id = models.CharField(max_length=10,primary_key=id)
+    description = models.CharField(max_length=1000, null=False)
+    type= models.ForeignKey(MediaType, null=True, on_delete=models.DO_NOTHING)
 
 
 class Image(models.Model):
@@ -19,13 +29,10 @@ class Image(models.Model):
     description = models.CharField(max_length=1000, null=True)
     type = models.CharField(max_length=5, blank=True)
     imageFile = models.ImageField(upload_to='staticfiles/images', null=True)
+    Categoria = models.ForeignKey(Categoria, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return 'Image: '+ self.name
-
-class Categoria(models.Model):
-    id = models.CharField(max_length=10,primary_key=id)
-    descripcion = models.CharField(max_length=1000, null=False)
 
 class ImageForm(ModelForm):
     class Meta:
@@ -41,6 +48,7 @@ class Video(models.Model):
     date =  models.DateTimeField(default=timezone.now)
     city = models.CharField(max_length=140, default='')
     country = models.CharField(max_length=140, default='')
+    Categoria = models.ForeignKey(Categoria, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return 'Video: '+ self.name
@@ -53,6 +61,7 @@ class Audio(models.Model):
     date =  models.DateTimeField(default=timezone.now)
     city = models.CharField(max_length=140, default='')
     country = models.CharField(max_length=140, default='')
+    Categoria = models.ForeignKey(Categoria, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return 'Audio: '+ self.name
